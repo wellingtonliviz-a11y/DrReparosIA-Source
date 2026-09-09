@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outro problema Hydra - Dr Reparos IA</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { margin:0; font-family:Arial,sans-serif; background:#f5f5f5; color:#222; }
+        .container { max-width:700px; margin:auto; padding:20px; text-align:center; }
+        .mascote { width:90px; }
+        .ia { color:#f58220; }
+        .card { background:#fff; padding:25px; border-radius:18px; box-shadow:0 4px 15px rgba(0,0,0,.10); }
+        textarea { width:100%; min-height:130px; padding:14px; border:2px solid #ddd; border-radius:10px; font:inherit; resize:vertical; }
+        textarea:focus { outline:none; border-color:#f58220; }
+        .botao { width:100%; padding:16px; margin-top:12px; border:0; border-radius:10px; background:#f58220; color:#fff; font-weight:bold; font-size:16px; cursor:pointer; }
+        .escuro { background:#222; }
+        .resumo { margin-top:18px; padding:16px; background:#fff4e8; border-left:5px solid #f58220; border-radius:8px; text-align:left; }
+        a { text-decoration:none; }
+        .voltar { display:inline-block; margin-top:20px; color:#555; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <img src="/static/imagens/mascote.png" class="mascote" alt="Mascote Dr Reparos">
+    <h1>Dr Reparos <span class="ia">IA</span></h1>
+    <div class="card">
+        <h2>Conte o que está acontecendo</h2>
+        <p>Descreva o sintoma com suas palavras. Nesta versão, a descrição fica registrada apenas na tela para orientar o próximo atendimento.</p>
+        <form method="POST">
+            <textarea name="descricao" required placeholder="Ex.: quando aperto o botão, a água demora para parar..."></textarea>
+            <button class="botao" type="submit">Continuar</button>
+        </form>
+
+        {% if descricao %}
+        <div class="resumo">
+            <strong>Descrição recebida:</strong>
+            <p>{{ descricao }}</p>
+            <p>Como este sintoma não está nos três fluxos principais da Hydra, recomendamos uma avaliação assistida.</p>
+        </div>
+        <a href="/videochamada"><button class="botao escuro">📹 Videochamada com especialista</button></a>
+        <a href="/atendimento-presencial"><button class="botao escuro">🧰 Atendimento presencial</button></a>
+        {% endif %}
+    </div>
+    <a href="/diagnostico/descarga/parede/hydra/problema" class="voltar">← Voltar</a>
+</div>
+</body>
+</html>

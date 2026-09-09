@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hydra - Dr Reparos IA</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #222;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .mascote {
+            width: 100px;
+        }
+
+        h1 {
+            margin: 5px 0;
+        }
+
+        .ia {
+            color: #f58220;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 18px;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.10);
+        }
+
+        .dica {
+            background-color: #fff4e8;
+            border-left: 5px solid #f58220;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: left;
+            margin: 20px 0;
+        }
+
+        .opcao {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            margin: 12px 0;
+            border: none;
+            border-radius: 10px;
+            background-color: #f58220;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .foto {
+            background-color: #222;
+        }
+
+        .voltar {
+            display: inline-block;
+            margin-top: 20px;
+            color: #555;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <img
+        src="/static/imagens/mascote.png"
+        class="mascote"
+        alt="Mascote Dr Reparos"
+    >
+
+    <h1>Dr Reparos <span class="ia">IA</span></h1>
+
+    <div class="card">
+
+        <h2>Válvula Hydra</h2>
+
+        <p>Agora precisamos identificar o modelo da sua válvula.</p>
+
+        <div class="dica">
+            <strong>Olhe a tampa da descarga.</strong><br><br>
+            Procure o nome, número ou alguma identificação do modelo.
+            Essa informação ajuda o Dr Reparos IA a indicar o reparo correto.
+        </div>
+
+        <a href="/diagnostico/descarga/parede/modelo/hydra-max-2550" style="text-decoration:none;">
+            <button class="opcao">Hydra Max 2550</button>
+        </a>
+
+        <a href="/diagnostico/descarga/parede/modelo/hydra-luxo" style="text-decoration:none;">
+            <button class="opcao">Hydra Luxo com acionador</button>
+        </a>
+
+        <a href="/diagnostico/descarga/parede/hydra/modelo" style="text-decoration:none;">
+            <button class="opcao">Outro modelo / digitar identificação</button>
+        </a>
+
+        <a href="/diagnostico/descarga/parede/hydra/foto" style="text-decoration:none;">
+            <button class="opcao foto">📷 Não sei o modelo - enviar foto</button>
+        </a>
+
+    </div>
+
+    <a href="/diagnostico/descarga/parede" class="voltar">
+        ← Voltar
+    </a>
+
+</div>
+
+</body>
+</html>

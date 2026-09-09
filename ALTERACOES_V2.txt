@@ -1,0 +1,23 @@
+DR REPAROS IA - VERSÃO 2
+
+Principais melhorias desta entrega:
+- Módulo Hydra organizado em três sintomas reais de campo.
+- Diagnóstico provável para tampa/parede, trancos e vazamento contínuo no vaso.
+- Passo a passo guiado para cada caso.
+- Modelo da Hydra preservado durante o fluxo usando sessão.
+- Upload de foto continua funcionando e agora permite seguir para o diagnóstico sem consumir API.
+- Telas de videochamada e atendimento presencial preparadas.
+- Botões ainda não desenvolvidos levam para uma tela "Em construção" em vez de ficarem sem resposta.
+- .env removido da entrega; incluído apenas .env.example.
+- Uploads de teste removidos da entrega.
+- requirements.txt, .gitignore e README.md adicionados.
+
+IMPORTANTE:
+O conteúdo de manutenção é um protótipo baseado na árvore de diagnóstico definida durante o desenvolvimento. Antes de abrir para clientes, revisar cada procedimento com experiência de campo e testar em modelos reais.
+
+V3 - Catálogo de peças e links de compra
+- Criado catalogo.py como ponto único para cadastrar links de kits Hydra.
+- Diagnóstico mostra kit recomendado antes do passo a passo.
+- Botão "Já tenho as peças" leva direto ao reparo guiado.
+- Quando houver URL cadastrada, aparece "Comprar kit recomendado" em nova aba.
+- Sem URL cadastrada, o sistema informa que o link será adicionado antes da publicação.

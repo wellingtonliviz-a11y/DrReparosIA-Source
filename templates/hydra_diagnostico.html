@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diagnóstico Hydra - Dr Reparos IA</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: Arial, sans-serif; background: #f5f5f5; color: #222; }
+        .container { max-width: 720px; margin: auto; padding: 20px; text-align: center; }
+        .mascote { width: 90px; }
+        .ia { color: #f58220; }
+        .card { background: #fff; padding: 25px; border-radius: 18px; margin-top: 18px; box-shadow: 0 4px 15px rgba(0,0,0,.10); }
+        .bloco { padding: 18px; border-radius: 10px; text-align: left; margin: 18px 0; }
+        .diagnostico { background: #fff4e8; border-left: 5px solid #f58220; }
+        .solucao { background: #f1f1f1; }
+        .aviso { background: #fff9db; border-left: 5px solid #d9a600; }
+        .compra { background: #eef8ef; border-left: 5px solid #2e8b57; }
+        .comprar { background: #2e8b57; }
+        .indisponivel { background: #777; cursor: default; }
+        .botao { display: block; width: 100%; padding: 16px; margin: 12px 0; border: 0; border-radius: 10px; background: #f58220; color: #fff; font-size: 16px; font-weight: bold; cursor: pointer; }
+        .video { background: #222; }
+        a { text-decoration: none; }
+        .voltar { display: inline-block; margin-top: 20px; color: #555; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <img src="/static/imagens/mascote.png" class="mascote" alt="Mascote Dr Reparos">
+    <h1>Dr Reparos <span class="ia">IA</span></h1>
+
+    <div class="card">
+        <h2>{{ dados.icone }} {{ dados.titulo }}</h2>
+
+        {% if modelo %}<p><strong>Modelo:</strong> {{ modelo }}</p>{% endif %}
+
+        <div class="bloco diagnostico">
+            <strong>Diagnóstico provável</strong>
+            <p>{{ dados.diagnostico }}</p>
+        </div>
+
+        <div class="bloco solucao">
+            <strong>Solução recomendada</strong>
+            <p>{{ dados.solucao }}</p>
+            <strong>Peças previstas:</strong>
+            <ul>
+                {% for peca in dados.pecas %}<li>{{ peca }}</li>{% endfor %}
+            </ul>
+        </div>
+
+        <div class="bloco aviso">
+            <strong>Antes de começar</strong>
+            <p>Confirme o modelo da válvula e use apenas peças compatíveis. Se houver dúvida sobre a identificação, não force a desmontagem.</p>
+        </div>
+
+        {% if produto %}
+        <div class="bloco compra">
+            <strong>🛒 Kit recomendado</strong>
+            <p><strong>{{ produto.nome }}</strong></p>
+            <p>{{ produto.descricao }}</p>
+            <ul>
+                {% for item in produto.itens %}<li>{{ item }}</li>{% endfor %}
+            </ul>
+            {% if produto.url_compra %}
+            <a href="{{ produto.url_compra }}" target="_blank" rel="noopener noreferrer">
+                <button class="botao comprar">🛒 Comprar kit recomendado</button>
+            </a>
+            {% else %}
+                <button class="botao indisponivel" type="button">🔗 Link de compra será cadastrado</button>
+            {% endif %}
+        </div>
+        {% endif %}
+
+        <a href="/diagnostico/descarga/parede/hydra/caso/{{ caso }}/passo-a-passo">
+            <button class="botao">✅ Já tenho as peças — iniciar reparo</button>
+        </a>
+
+        <a href="/videochamada"><button class="botao video">📹 Quero ajuda por videochamada</button></a>
+        <a href="/atendimento-presencial"><button class="botao video">🧰 Prefiro atendimento presencial</button></a>
+    </div>
+
+    <a href="/diagnostico/descarga/parede/hydra/problema" class="voltar">← Voltar</a>
+</div>
+</body>
+</html>

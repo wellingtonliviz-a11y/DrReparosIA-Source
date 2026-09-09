@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Diagnóstico Hydra - Dr Reparos IA</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #222;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .mascote {
+            width: 90px;
+        }
+
+        .ia {
+            color: #f58220;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 18px;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.10);
+        }
+
+        .diagnostico {
+            background-color: #fff4e8;
+            border-left: 5px solid #f58220;
+            padding: 18px;
+            border-radius: 8px;
+            text-align: left;
+            margin: 20px 0;
+        }
+
+        .solucao {
+            background-color: #f3f3f3;
+            padding: 18px;
+            border-radius: 10px;
+            text-align: left;
+            margin: 20px 0;
+        }
+
+        .botao {
+            display: block;
+            width: 100%;
+            padding: 16px;
+            margin: 12px 0;
+            border: none;
+            border-radius: 10px;
+            background-color: #f58220;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .video {
+            background-color: #222;
+        }
+
+        .voltar {
+            display: inline-block;
+            margin-top: 20px;
+            color: #555;
+            text-decoration: none;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <img
+        src="/static/imagens/mascote.png"
+        class="mascote"
+        alt="Mascote Dr Reparos"
+    >
+
+    <h1>
+        Dr Reparos <span class="ia">IA</span>
+    </h1>
+
+    <div class="card">
+
+        <h2>💦 Água escorrendo pela tampa ou parede</h2>
+
+        <div class="diagnostico">
+
+            <strong>Diagnóstico provável:</strong>
+
+            <p>
+                Esse sintoma normalmente indica problema
+                no retentor da válvula.
+            </p>
+
+            <p>
+                Porém, durante a desmontagem, também é comum
+                encontrar desgaste no êmbolo interno.
+            </p>
+
+        </div>
+
+        <div class="solucao">
+
+            <strong>Solução recomendada:</strong>
+
+            <p>
+                Substituir o conjunto de reparo,
+                incluindo:
+            </p>
+
+            <ul>
+                <li>Êmbolo</li>
+                <li>Retentor</li>
+            </ul>
+
+        </div>
+
+        <button class="botao">
+            🔧 Quero fazer o reparo passo a passo
+        </button>
+
+        <button class="botao video">
+            📹 Quero ajuda por videochamada
+        </button>
+
+    </div>
+
+    <a
+        href="/diagnostico/descarga/parede/hydra/problema"
+        class="voltar">
+
+        ← Voltar
+
+    </a>
+
+</div>
+
+</body>
+
+</html>

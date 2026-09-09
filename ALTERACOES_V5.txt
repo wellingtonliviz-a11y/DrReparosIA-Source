@@ -1,0 +1,20 @@
+DR REPAROS IA - V5
+
+Objetivo: tornar os módulos já cadastrados realmente completos para teste público.
+
+Módulos ativos:
+- Descarga de parede (Hydra Max 2550, Hydra Luxo, Docol 1 1/2, Docol RI484, Lorenzetti P21/P41)
+- Caixa acoplada: transbordamento pelo ladrão / vazamento pela torre central
+- Substituição de sifão: lavatório e tanque/pia, com atenção a anéis e adaptador
+- Troca de engate flexível
+- Reparo de registro de pressão com kit salva registro
+- Instalação de chuveiro com Wago, com trava de segurança elétrica
+
+Melhorias V5:
+- Materiais e ferramentas em cada procedimento
+- Links de afiliado para os materiais cadastrados
+- Confirmação de segurança antes do passo a passo elétrico
+- Tela final perguntando se o reparo foi resolvido
+- Saída para videochamada ou atendimento presencial
+- Tela funcional para identificar caixa acoplada x válvula de parede
+- Endpoint /healthz para hospedagem

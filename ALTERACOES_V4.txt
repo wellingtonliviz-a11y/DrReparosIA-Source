@@ -1,0 +1,19 @@
+DR REPAROS IA — V4
+
+Novos módulos:
+- Caixa acoplada: diferencia transbordamento pelo ladrão (boia/entrada) de vazamento sem ladrão (torre central/saída).
+- Substituição de sifão: destaque para anéis de vedação e adaptador da válvula de lavatório.
+- Troca de engate flexível.
+- Reparo de registro de pressão do chuveiro com kit salva registro.
+- Instalação de chuveiro com conector Wago, com bloqueios e alertas de segurança elétrica.
+- Válvulas de parede Docol 1 1/2, Docol 1 1/4 RI484, Lorenzetti P21 e P41.
+- Hydra Max 2550 e Hydra Luxo com acionador agora têm seleção direta.
+
+Catálogo:
+- 12 links de afiliado do Mercado Livre centralizados em catalogo.py.
+- Produtos aparecem somente quando associados ao diagnóstico/serviço.
+
+Arquitetura:
+- Novos serviços usam telas genéricas orientadas por dados para reduzir repetição de HTML.
+- Mantido o módulo Hydra anterior e upload de fotos.
+- .env não incluído no ZIP.

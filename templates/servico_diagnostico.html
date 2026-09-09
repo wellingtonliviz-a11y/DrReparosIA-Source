@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>{{ dados.titulo }} - Dr Reparos IA</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#f5f5f5;color:#222}.container{max-width:780px;margin:auto;padding:18px}.top{text-align:center}.mascote{width:88px}.ia{color:#f58220}.badge{display:inline-block;background:#e8f8ed;color:#166534;padding:7px 11px;border-radius:999px;font-size:13px;font-weight:bold}.card{background:#fff;padding:25px;border-radius:18px;margin-top:15px;box-shadow:0 4px 15px rgba(0,0,0,.10)}.box{padding:16px;border-radius:10px;margin:16px 0;background:#fff4e8;border-left:5px solid #f58220}.seguranca{padding:16px;border-radius:10px;margin:16px 0;background:#fff0f0;border-left:5px solid #b00020}.destaque{padding:15px;border-radius:10px;margin:16px 0;background:#fff8d9;border-left:5px solid #e2a500}.produto{padding:16px;border-radius:10px;background:#f3f3f3;margin:16px 0}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.mini{background:#fafafa;border:1px solid #eee;border-radius:12px;padding:15px}.mini h3{margin-top:0}.mini ul{padding-left:20px}.mini li{margin:8px 0}.botao{display:block;width:100%;padding:15px;margin:10px 0;border:0;border-radius:10px;background:#f58220;color:white;text-align:center;font-weight:bold;text-decoration:none;cursor:pointer;font-size:15px}.sec{background:#222}.ok{background:#137333}.passos{padding-left:24px}.passos li{margin:12px 0;line-height:1.5}.bloqueado{display:none}.confirmacao{display:flex;gap:10px;align-items:flex-start;text-align:left;background:#fff0f0;padding:14px;border-radius:10px;margin:15px 0}.voltar{display:block;text-align:center;margin:22px;color:#555;text-decoration:none}@media(max-width:600px){.grid{grid-template-columns:1fr}.container{padding:12px}.card{padding:18px}.mascote{width:76px}}
+</style>
+</head>
+<body>
+<div class="container">
+<div class="top"><img src="/static/imagens/mascote.png" class="mascote" alt="Mascote Dr Reparos"><h1>Dr Reparos <span class="ia">IA</span></h1><span class="badge">✅ Módulo ativo para teste</span></div>
+<div class="card">
+<h2>{{ dados.titulo }}</h2>
+<div class="box"><strong>Diagnóstico provável</strong><p>{{ dados.diagnostico }}</p><strong>Solução recomendada</strong><p>{{ dados.solucao }}</p></div>
+{% if dados.destaque %}<div class="destaque"><strong>💡 Atenção neste detalhe</strong><p>{{ dados.destaque }}</p></div>{% endif %}
+{% if dados.cuidados %}<div class="seguranca"><strong>⚠️ Antes de começar</strong><ul>{% for item in dados.cuidados %}<li>{{ item }}</li>{% endfor %}</ul></div>{% endif %}
+<div class="grid">
+{% if dados.materiais %}<div class="mini"><h3>🧰 Materiais</h3><ul>{% for item in dados.materiais %}<li>{{ item }}</li>{% endfor %}</ul></div>{% endif %}
+{% if dados.ferramentas %}<div class="mini"><h3>🔧 Ferramentas</h3><ul>{% for item in dados.ferramentas %}<li>{{ item }}</li>{% endfor %}</ul></div>{% endif %}
+</div>
+{% if produto %}<div class="produto"><strong>🛒 Material recomendado</strong><p>{{ produto.nome }}</p><a class="botao" href="{{ produto.url_compra }}" target="_blank" rel="noopener noreferrer">Comprar material recomendado</a></div>{% endif %}
+{% if produto_extra %}<div class="produto"><strong>🛒 Produto relacionado</strong><p>{{ produto_extra.nome }}</p><a class="botao" href="{{ produto_extra.url_compra }}" target="_blank" rel="noopener noreferrer">Ver produto relacionado</a></div>{% endif %}
+
+{% if dados.requer_confirmacao %}
+<div class="confirmacao"><input id="confirmarSeguranca" type="checkbox"><label for="confirmarSeguranca"><strong>Confirmo que desliguei o disjuntor e consigo verificar com instrumento apropriado que não há tensão nos condutores.</strong><br>Se você não consegue confirmar isso com segurança, não continue o procedimento elétrico.</label></div>
+<button id="liberar" class="botao" disabled>🔒 Liberar passo a passo</button>
+<div id="passosArea" class="bloqueado">
+{% else %}
+<div id="passosArea">
+{% endif %}
+<h3>🔧 Passo a passo</h3><ol class="passos">{% for passo in dados.passos %}<li>{{ passo }}</li>{% endfor %}</ol>
+<a class="botao ok" href="/diagnostico/servico/{{ servico }}/{{ caso }}/finalizar">✅ Concluí o procedimento</a>
+</div>
+<a class="botao sec" href="/videochamada">📹 Preciso de ajuda por videochamada</a>
+<a class="botao sec" href="/atendimento-presencial">🧰 Prefiro atendimento presencial</a>
+</div>
+<a class="voltar" href="/diagnostico/servico/{{ servico }}">← Voltar</a>
+</div>
+{% if dados.requer_confirmacao %}
+<script>
+const c=document.getElementById('confirmarSeguranca'), b=document.getElementById('liberar'), a=document.getElementById('passosArea');
+c.addEventListener('change',()=>{b.disabled=!c.checked;b.textContent=c.checked?'⚡ Mostrar passo a passo':'🔒 Liberar passo a passo'});
+b.addEventListener('click',()=>{if(c.checked){a.style.display='block';b.style.display='none';a.scrollIntoView({behavior:'smooth'})}});
+</script>
+{% endif %}
+</body></html>

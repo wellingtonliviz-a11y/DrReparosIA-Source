@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problema na Hydra - Dr Reparos IA</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: Arial, sans-serif; background: #f5f5f5; color: #222; }
+        .container { max-width: 700px; margin: auto; padding: 20px; text-align: center; }
+        .mascote { width: 100px; }
+        .ia { color: #f58220; }
+        .card { background: #fff; padding: 25px; border-radius: 18px; margin-top: 20px; box-shadow: 0 4px 15px rgba(0,0,0,.10); }
+        .modelo { background: #fff4e8; border-left: 5px solid #f58220; padding: 12px 15px; border-radius: 8px; text-align: left; margin: 15px 0 20px; }
+        .opcao { display: block; width: 100%; padding: 16px; margin: 12px 0; border: 0; border-radius: 10px; background: #f58220; color: #fff; font-size: 16px; font-weight: bold; cursor: pointer; }
+        .ajuda { background: #222; }
+        a { text-decoration: none; }
+        .voltar { display: inline-block; margin-top: 20px; color: #555; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <img src="/static/imagens/mascote.png" class="mascote" alt="Mascote Dr Reparos">
+    <h1>Dr Reparos <span class="ia">IA</span></h1>
+
+    <div class="card">
+        <h2>O que está acontecendo com sua válvula Hydra?</h2>
+        <p>Escolha a situação que mais se parece com o problema.</p>
+
+        {% if modelo %}
+        <div class="modelo"><strong>Modelo informado:</strong> {{ modelo }}</div>
+        {% endif %}
+
+        <a href="/diagnostico/descarga/parede/hydra/caso/tampa">
+            <button class="opcao">💦 Água escorrendo pela tampa ou pela parede</button>
+        </a>
+
+        <a href="/diagnostico/descarga/parede/hydra/caso/trancos">
+            <button class="opcao">🔨 A descarga dá trancos quando é acionada</button>
+        </a>
+
+        <a href="/diagnostico/descarga/parede/hydra/caso/vaso">
+            <button class="opcao">💧 Água não para de cair dentro do vaso</button>
+        </a>
+
+        <a href="/diagnostico/descarga/parede/hydra/outro">
+            <button class="opcao ajuda">❓ Meu problema é diferente</button>
+        </a>
+    </div>
+
+    <a href="/diagnostico/descarga/parede/hydra" class="voltar">← Voltar</a>
+</div>
+</body>
+</html>
