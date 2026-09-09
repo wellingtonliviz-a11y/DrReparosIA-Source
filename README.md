@@ -1,37 +1,161 @@
-# Dr Reparos IA — V4
+# 🔧 Dr Reparos IA — Source Code
 
-Protótipo Flask para diagnóstico guiado e orientação de pequenos reparos residenciais.
+Código-fonte público do **Dr Reparos IA**, projeto desenvolvido para aplicar tecnologia à solução de problemas reais de manutenção residencial.
 
-## Módulos disponíveis
+O projeto nasceu da minha experiência prática com manutenção residencial e evoluiu de um protótipo em Python executado no terminal para uma aplicação web com **Flask**, posteriormente integrada a um aplicativo **Android**.
 
-- Válvulas de parede: Hydra Max 2550, Hydra Luxo com acionador, Docol 1 1/2, Docol 1 1/4 RI484, Lorenzetti P21 e P41.
-- Caixa acoplada: diagnóstico por ladrão/boia ou torre central.
-- Substituição de sifão, incluindo anéis de vedação e adaptador de lavatório.
-- Troca de engate flexível.
-- Reparo de registro de pressão do chuveiro.
-- Instalação de chuveiro com conector Wago com orientações de segurança.
-- Upload de foto preparado para futura análise por IA.
-- Videochamada e atendimento presencial como rotas de apoio.
+> Este repositório é uma versão pública destinada à apresentação técnica e portfólio.
 
-## Produtos
+---
 
-Os links de afiliado ficam centralizados em `catalogo.py`. Para alterar um produto ou link, edite apenas esse arquivo.
+## 🚀 Aplicação funcionando
 
-## Como executar
+🌐 **Web:** https://drreparosia.onrender.com
 
-```bash
-pip install -r requirements.txt
-python app.py
+📱 **Android:**  
+https://github.com/wellingtonliviz-a11y/DrReparosIA-Android
+
+---
+
+## 🎯 Objetivo do projeto
+
+O Dr Reparos IA busca auxiliar pessoas sem conhecimento técnico a identificar problemas residenciais e seguir um fluxo orientado para encontrar possíveis causas e soluções.
+
+A aplicação trabalha com três possibilidades de atendimento:
+
+- 🔍 Diagnóstico guiado
+- 📹 Videochamada com especialista
+- 🛠️ Solicitação de atendimento presencial
+
+---
+
+## 🧠 Funcionalidades implementadas
+
+- Diagnóstico guiado de problemas residenciais
+- Identificação de modelos de válvulas de descarga
+- Diagnóstico de caixa acoplada
+- Substituição de sifão
+- Troca de engate flexível
+- Reparo de registro de pressão
+- Orientações para instalação de chuveiro
+- Upload de imagens
+- Orientações de segurança
+- Lista de materiais e ferramentas
+- Passo a passo para execução do reparo
+- Integração com links de produtos recomendados
+- Rotas para videochamada e atendimento presencial
+- Estrutura preparada para evolução da integração com IA
+
+---
+
+## 🛠️ Tecnologias
+
+- Python
+- Flask
+- HTML5
+- CSS3
+- Jinja2
+- Git / GitHub
+- Render
+- Gunicorn
+- Kotlin
+- Android Studio
+- Android WebView
+
+---
+
+## 🏗️ Estrutura do projeto
+
+```text
+DrReparosIA-Source/
+│
+├── app.py
+├── catalogo.py
+├── diagnostico.py
+├── orcamento.py
+├── teste_ia.py
+├── requirements.txt
+├── render.yaml
+├── .env.example
+├── .gitignore
+│
+├── templates/
+│   └── interfaces HTML da aplicação
+│
+└── static/
+    └── imagens e recursos estáticos
+
 ```
 
-Abra `http://127.0.0.1:5000`.
+### Arquivos principais
 
-## Segurança
+**`app.py`**  
+Aplicação Flask principal, contendo rotas, controle de sessões, upload de imagens e lógica dos módulos de diagnóstico.
 
-Não inclua seu `.env` em ZIPs ou repositórios. A V4 contém apenas `.env.example`.
+**`catalogo.py`**  
+Centraliza produtos, modelos de válvulas e links utilizados pelos diagnósticos.
 
-O módulo elétrico exige circuito desenergizado e confirmação de ausência de tensão. Em caso de dúvida sobre dimensionamento, aterramento ou ausência de tensão, o fluxo orienta interromper e procurar profissional qualificado.
+**`diagnostico.py`**  
+Protótipo inicial desenvolvido em Python para validar o fluxo de diagnóstico antes da implementação da interface web.
 
+**`templates/`**  
+Interfaces HTML renderizadas pelo Flask.
 
-## Versão 5
-A V5 amplia os módulos ativos com passo a passo completo, materiais/ferramentas, links de compra, confirmação de segurança elétrica e finalização do reparo.
+**`static/`**  
+Recursos visuais utilizados pela aplicação.
+
+---
+
+## 📈 Evolução do projeto
+
+O desenvolvimento começou com um fluxo simples executado pelo terminal utilizando `print()` e `input()`.
+
+A partir desse protótipo, o projeto evoluiu para uma aplicação web utilizando Flask:
+
+**Python → Flask → HTML/CSS → Deploy em nuvem → Android WebView**
+
+Essa evolução permitiu transformar a ideia inicial em uma aplicação funcional acessível pela web e por dispositivos Android.
+
+---
+
+## 🔐 Segurança
+
+Credenciais e variáveis sensíveis não são armazenadas no código-fonte público.
+
+O projeto utiliza variáveis de ambiente para configurações como:
+
+```text
+FLASK_SECRET_KEY
+OPENAI_API_KEY
+```
+
+O arquivo `.env` é ignorado pelo Git através do `.gitignore`.
+
+O arquivo `.env.example` demonstra apenas a estrutura esperada das variáveis.
+
+---
+
+## 🔮 Próximas evoluções
+
+- Integração de IA ao fluxo de diagnóstico
+- Análise de imagens enviadas pelo usuário
+- Ampliação da base de problemas residenciais
+- Evolução da experiência no aplicativo Android
+- Melhorias na arquitetura e organização dos módulos
+- Expansão dos fluxos de atendimento
+
+---
+
+## 👨‍💻 Desenvolvedor
+
+**Wellington Liviz**
+
+Profissional com experiência em Tecnologia da Informação, atualmente cursando **Tecnologia em Inteligência Artificial**.
+
+Também cursei **3 semestres de Análise e Desenvolvimento de Sistemas** e venho aprofundando meus conhecimentos em desenvolvimento de software através de projetos práticos envolvendo Python, Flask, Android e aplicações web.
+
+**LinkedIn:**  
+https://www.linkedin.com/in/wellington-liviz-567001249/
+
+**GitHub:**  
+https://github.com/wellingtonliviz-a11y
